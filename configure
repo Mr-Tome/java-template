@@ -1,6 +1,7 @@
 #!/bin/bash
 
-. scripts/constants.sh
+chmod +x scripts/constants.sh
+source scripts/constants.sh
 
 # Initialize a variable to track if 'clean' is found
 found_clean=false
@@ -27,10 +28,11 @@ else
 	bash scripts/configure_OpenJDK.sh
 	echo "Finished Configuring OpenJDK 22.0.1"
 	
-	echo "Configuring grale..."
+	echo "Configuring gradle..."
+	gradle wrapper
 	##chmod +x scripts/configure_gradle.sh
 	##bash scripts/configure_gradle.sh
-	echo "Finished Configuring gradle"
+	##echo "Finished Configuring gradle"
 	
 	echo "Finished Configuring Development Dependencies..."
 	echo ""
