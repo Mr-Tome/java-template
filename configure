@@ -25,14 +25,13 @@ else
 	echo "Configuring to this path: $HOME/.configuration-dependencies/$PROJECT_NAME"
 	echo "Configuring  OpenJDK 22.0.1..."
 	chmod +x scripts/configure_OpenJDK.sh
-	bash scripts/configure_OpenJDK.sh
+	source scripts/configure_OpenJDK.sh
 	echo "Finished Configuring OpenJDK 22.0.1"
 	
 	echo "Configuring gradle..."
-	gradle wrapper
-	##chmod +x scripts/configure_gradle.sh
-	##bash scripts/configure_gradle.sh
-	##echo "Finished Configuring gradle"
+	chmod +x scripts/configure_Gradle.sh
+	source scripts/configure_Gradle.sh
+	echo "Finished Configuring gradle"
 	
 	echo "Finished Configuring Development Dependencies..."
 	echo ""
