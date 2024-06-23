@@ -9,6 +9,21 @@ exportGradle()
 	# Add Gradle bin directory to PATH
 	export PATH="$GRADLE_HOME/bin:$PATH"
 }
+gradleWrapper()
+{
+	echo "Gradle Wrapper:"
+	echo ""
+	echo ""
+	if [ -d "build/gradle" ]; then
+		cd build/gradle
+	else
+		mkdir -p build/gradle
+		cd build/gradle
+		echo "running gradle init2"
+		gradle init <<< /dev/null
+	fi
+	gradle wrapper
+}
 
 testGradleDownload()
 {
@@ -21,6 +36,7 @@ testGradleDownload()
 	echo ""
 	echo ""
 	echo "Finished Testing the download."
+	gradleWrapper
 }
 
 if [ -d "$gradle_destination" ]; then
